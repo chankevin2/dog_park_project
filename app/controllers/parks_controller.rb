@@ -15,7 +15,7 @@ class ParksController < ApplicationController
       flash[:success] = "Dog Park saved successfully"
       redirect_to parks_url
     else
-      flash.new[:error] = @park.errors.full_messages.join(", ")
+      flash.now[:error] = @park.errors.full_messages.join(", ")
       render :new
     end
   end

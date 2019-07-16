@@ -6,11 +6,8 @@ class CreateParks < ActiveRecord::Migration[5.2]
       t.string :city, null: false
       t.string :state, null: false
       t.string :zip, null: false
-      t.string :description, null: false
-
-      
+      t.string :description, null: false    
       t.timestamps null: false
-
     end
   end
 end

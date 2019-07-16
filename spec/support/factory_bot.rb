@@ -7,13 +7,13 @@ FactoryBot.define do
     password_confirmation { 'password' }
   end
 
-    factory :park do
-      sequence(:name) {|n| "#{n}" }
-      sequence(:address) {|n| "#{n}" }
-      sequence(:city) {|n| "#{n}" }
-      sequence(:state) {|n| "#{n}" }
-      sequence(:zip) {|n| "#{n}" }
-      sequence(:description) {|n| "#{n}" }
+  factory :park do
+    sequence(:name) {|name| "#{name} Park" }
+    sequence(:address) {|address| "#{address} Main Street" }
+    city {"Boston"}
+    state {"MA"}
+    zip {"01103"}
+    description {"Yankees suck"}
+  end
 
-    end
 end

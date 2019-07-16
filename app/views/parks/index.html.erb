@@ -1,7 +1,8 @@
-<h1> Parks Index test </h1>
+<h1> Dog Parks in Massachusetts </h1>
 
 <ul>
   <% @parks.each do |park| %>
+<<<<<<< HEAD
   <li>
     <div class="callout">
     <div class="callout-header"><%= park.name %></div>
@@ -9,6 +10,11 @@
       <%= park.address %>
     </div>
   </li><br>
+=======
+    <li>
+      <%= park.name %>
+    </li>
+>>>>>>> f3d4c1409a544b41c5fdefdb72a7c217ba51a9e5
   <% end %>
 </ul>
 
