@@ -1,0 +1,8 @@
+<h1>Welcome to our news aggregator!</h1>
+<br>
+<% @articles.each do |article| %>
+  <h2><%=article["title"]%></h2>
+  <p><%= article["description"] %></p>
+  <a href="https://<%=article["url"]%>" target="_blank" ><p>Visit the article</p></a>
+  <br>
+<% end %>
