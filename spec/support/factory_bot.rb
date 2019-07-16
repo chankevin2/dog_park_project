@@ -8,11 +8,12 @@ FactoryBot.define do
   end
 
   factory :park do
-    sequence(:name) {|name| name }
-    sequence(:address) {|address| address }
-    sequence(:city) {|city| city }
-    sequence(:state) {|state| state }
-    sequence(:zip) {|zip| zip }
-    sequence(:description) {|description| description }
+    sequence(:name) {|name| "#{name} Park" }
+    sequence(:address) {|address| "#{address} Main Street" }
+    city {"Boston"}
+    state {"MA"}
+    zip {"01103"}
+    description {"Yankees suck"}
   end
+
 end
