@@ -1,9 +1,15 @@
-<h1> Dog Parks in Massachusetts </h1>
+<h1> Dog Parks </h1>
 
 <ul>
   <% @parks.each do |park| %>
-    <li>
-      <%= park.name %>
-    </li>
+  <li>
+    <div class="callout">
+    <div class="callout-header"><%= park.name %></div>
+    <div class="callout-container">
+      <%= park.address %>
+    </div>
+  </li><br>
   <% end %>
 </ul>
+
+<%= link_to "Add a New Park", new_park_path %>
