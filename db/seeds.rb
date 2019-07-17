@@ -30,4 +30,3 @@ if Rails.env.development?
    name, address, city, state, zip, description = park_info
    Park.create!(name: name, address: address, city: city, state: state, zip: zip, description: description)
  end
-end
