@@ -6,15 +6,10 @@ class ParkShowContainer extends Component {
     super(props);
     this.state ={
       park: {}
-
     }
-
   }
 
   componentDidMount() {
-    console.log("In show container mount")
-    console.log(this.props.match.params)
-    // debugger
     let id = this.props.match.params.id
     fetch(`/api/v1/parks/${id}`)
      .then(response => {
