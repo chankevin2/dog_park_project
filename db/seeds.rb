@@ -8,11 +8,11 @@
 if Rails.env.development?
  parks = [
      ["Mattapan Park",
-     "19 State Road",
-     "Mattapan",
-     "MA",
-     "06661",
-     "This place is dangerous"],
+       "19 State Road",
+       "Mattapan",
+       "MA",
+       "06661",
+       "This place is dangerous"],
      ["Marblehead Park",
        "92 Boston Street",
        "Marblehead",
@@ -20,11 +20,11 @@ if Rails.env.development?
        "01945",
        "Small and kind of dirty"],
      ["Boston Park",
-     "11 Sturrow Drive",
-     "Boston",
-     "MA",
-     "01003",
-     "Yankees suck"]
+       "11 Sturrow Drive",
+       "Boston",
+       "MA",
+       "01003",
+       "Yankees suck"]
  ]
  parks.each do |park_info|
    name, address, city, state, zip, description = park_info
