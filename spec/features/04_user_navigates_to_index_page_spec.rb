@@ -7,7 +7,12 @@ feature 'user goes to root path' do
 
     visit parks_path
 
+    expect(page).to have_content "Dog Parks"
     expect(page).to have_content park1.name
+    expect(page).to have_content park1.address
     expect(page).to have_content park2.name
+    expect(page).to have_content park2.address
+
+    expect(page).to have_link "Add a New Park"
   end
 end
