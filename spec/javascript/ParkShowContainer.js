@@ -34,7 +34,7 @@ describe('ParkShowContainer', () => {
   it('renders a park fetched from api call', (done) => {
     setTimeout(() => {
       expect(wrapper.find('h3').text()).toEqual(park.name)
-        done()
+      done()
     }, 0)
   })
 

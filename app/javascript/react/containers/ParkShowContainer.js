@@ -1,5 +1,6 @@
 import React, {Component } from "react";
 import ParkShow from '../components/ParkShow'
+import ReviewIndexContainer from './ReviewIndexContainer'
 
 class ParkShowContainer extends Component {
   constructor(props) {
