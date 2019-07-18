@@ -2,8 +2,10 @@ import React from 'react'
 
 const ReviewTile = (props) => {
   return(
+
     <div>
-    hey
+      <p>Rating: {props.rating}</p>
+      <p>Description: {props.body}</p>
     </div>
   )
 }

@@ -32,6 +32,7 @@ class ParkShowContainer extends Component {
 
   render() {
     return(
+      <div>
       <ParkShow
         id={this.state.park.id}
         name={this.state.park.name}
@@ -41,6 +42,9 @@ class ParkShowContainer extends Component {
         state={this.state.park.state}
         zip={this.state.park.zip}
        />
+
+       <ReviewIndexContainer />
+       </div>
     )
   }
 }

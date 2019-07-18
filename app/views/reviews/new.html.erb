@@ -1,0 +1,15 @@
+<h1> Add Review Form </h1>
+
+<%= form_for([@park, @review]) do |f| %>
+
+  <b><%= f.label :rating%></b>
+  <%= f.text_field :rating%>
+
+  <b><%= f.label :body, "Review"%></b>
+  <%= f.text_field :body%>
+
+  <%= f.submit "Add Review" %>
+
+<% end %>
+
+<%= link_to "Back to Homepage", parks_path %>
