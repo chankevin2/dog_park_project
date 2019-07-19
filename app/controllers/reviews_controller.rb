@@ -14,15 +14,14 @@ class ReviewsController < ApplicationController
     @park = Park.find(params[:park_id])
     @review.user_id = current_user.id if current_user
     @review.park = @park
-    if @review.save
-      flash[:success] = "Review add successfully"
-      redirect_to @park
-    else
-      flash[:error] = @review.errors.full_messages.join(", ")
-      render :new
-    end
+      if @review.save
+        flash[:success] = "Review add successfully"
+        redirect_to @park
+      else
+        flash[:error] = @review.errors.full_messages.join(", ")
+        render :new
+      end
   end
-end
 
   private
 
