@@ -16,13 +16,8 @@ describe('ParkShowContainer', () => {
       state:"MA",
       zip:"06661"
     }
-
-
-
     wrapper = shallow(<ParkShowContainer match={routerParams}/>);
   })
-
-
 
   it('should have the specified initial state', () => {
     expect(wrapper.state()).toEqual({park: {}})
@@ -32,9 +27,8 @@ describe('ParkShowContainer', () => {
   it('should render a ParkShow Component', () => {
     wrapper.setState({park: park})
 
-      expect(wrapper.find("ParkShow")).toBePresent()
+    expect(wrapper.find("ParkShow")).toBePresent()
   })
-
 
   it('should render the ParkShow Component with specific props when specfic park is selected', () => {
     wrapper.setState({park: park})

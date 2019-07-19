@@ -2,7 +2,6 @@ import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
 import fetchPonyfill from 'fetch-ponyfill';
-import fetchMock from 'fetch-mock'
 
 
 const {fetch, Request, Response, Headers} = fetchPonyfill({});
