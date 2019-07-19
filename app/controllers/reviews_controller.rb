@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
         errors = @review.errors.full_messages
         index = errors.index("Rating is not included in the list")
           if (index != nil)
-            errors[index] = "Rating must be a number of 0-5"
+            errors[index] = "Rating must be a number of 1-5"
           end
         flash.now[:error] = errors.join("<br/>").html_safe
         render :new
