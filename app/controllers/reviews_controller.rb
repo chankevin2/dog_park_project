@@ -15,10 +15,15 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id if current_user
     @review.park = @park
       if @review.save
-        flash[:success] = "Review add successfully"
+        flash[:success] = "Review added successfully"
         redirect_to @park
       else
-        flash[:error] = @review.errors.full_messages.join(", ")
+        errors = @review.errors.full_messages
+        index = errors.index("Rating is not included in the list")
+          if (index != nil)
+            errors[index] = "Rating must be a number of 0-5"
+          end
+        flash.now[:error] = errors.join("<br/>").html_safe
         render :new
       end
   end
