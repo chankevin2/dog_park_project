@@ -43,3 +43,4 @@ user3 = User.create(email: "Kevin@ishere.com", encrypted_password: "Kevinnotasla
 review1 = Review.create(park: park1, rating: 4, body: "I would not recommend", user_id: 1)
 review2 = Review.create(park: park2, rating: 3, body: "awesome", user_id: 2)
 review3 = Review.create(park: park3, rating: 5, body: "The best place evaaarrrrrrrr", user_id: 3)
+binding.pry

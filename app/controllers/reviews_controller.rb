@@ -10,10 +10,11 @@ class ReviewsController < ApplicationController
     @review.park = @park
     if @review.save
       flash[:notice] = "Review add successfully"
-      redirect_to @park 
+      redirect_to @park
     else
       flash[:notice] = @review.error.full_messages.join(", ")
       render :new
+    end
   end
 
   private
