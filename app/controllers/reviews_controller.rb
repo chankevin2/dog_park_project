@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review add successfully"
       redirect_to @park
     else
-      flash[:notice] = @review.error.full_messages.join(", ")
+      flash[:notice] = @review.errors.full_messages.join(", ")
       render :new
     end
   end
