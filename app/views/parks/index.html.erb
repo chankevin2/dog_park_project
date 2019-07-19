@@ -1,4 +1,4 @@
-<h1> Dog Parks </h1>
+<h1> Dog Parks  <%= link_to "Add a New Park", new_park_path %></h1>
 
 <ul>
   <% @parks.each do |park| %>
@@ -12,5 +12,3 @@
   </li></a><br>
   <% end %>
 </ul>
-
-<%= link_to "Add a New Park", new_park_path %>

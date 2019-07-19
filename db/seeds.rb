@@ -36,9 +36,9 @@ park1 = Park.create(name: "Mattapan Park", address: "19 State Road", city: "Matt
 park2 = Park.create(name: "DexterPark", address: "19 City Road", city: "Boston", state: "MA", zip: 06661, description: "This place is great")
 park3 = Park.create(name: "Chinatown", address: "29 Town Road", city: "Boston", state: "MA", zip: 06661, description: "This place is really awesome")
 
-user1 = User.create(email: "ChrisLay@nothere.com", encrypted_password: "Chrisyouslacker")
-user2 = User.create(email: "Rita@ishere.com", encrypted_password: "Ritanotaslacker")
-user3 = User.create(email: "Kevin@ishere.com", encrypted_password: "Kevinnotaslacker")
+user1 = User.create(email: "ChrisLay@nothere.com", password: "Chrisyouslacker")
+user2 = User.create(email: "Rita@ishere.com", password: "Ritanotaslacker")
+user3 = User.create(email: "Kevin@ishere.com", password: "Kevinnotaslacker")
 
 review1 = Review.create(park: park1, rating: 4, body: "I would not recommend", user_id: 1)
 review2 = Review.create(park: park2, rating: 3, body: "awesome", user_id: 2)
