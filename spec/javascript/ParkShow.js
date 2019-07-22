@@ -1,6 +1,5 @@
 import ParkShow from '../../app/javascript/react/components/ParkShow'
 
-
 describe('ParkShow', () => {
   let wrapper;
 
