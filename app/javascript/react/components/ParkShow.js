@@ -5,11 +5,10 @@ const ParkShow = props => {
   return(
     <div>
       <h3>{props.name}</h3>
-      <p>Description: {props.description}</p>
-      <p1>Address: {props.address} </p1>
-      <p2>{props.city} </p2>
-      <p3>{props.state} </p3>
-      <p4>{props.zip} </p4>
+      <p id="descr">Description: {props.description}</p>
+      <p id="address">Address: {props.address}, {props.city}, {props.state}  {props.zip} </p>
+      <br></br>
+      <a href={`/parks/${props.id}/reviews/new`}>Add New Review</a>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import ParkShowContainer from '../../app/javascript/react/containers/ParkShowContainer'
 import ParkShow from '../../app/javascript/react/components/ParkShow'
-import fetchMock from 'fetch-mock'
 
 describe('ParkShowContainer', () => {
   let wrapper, park;
@@ -14,13 +13,21 @@ describe('ParkShowContainer', () => {
       address:"19 State Road",
       city:"Mattapan",
       state:"MA",
-      zip:"06661"
+      zip:"06661",
+      reviews: [
+        {
+          "id": 16,
+          "rating": 3,
+          "body": "2;40",
+          "park_id": 1
+        }
+      ]
     }
     wrapper = shallow(<ParkShowContainer match={routerParams}/>);
   })
 
   it('should have the specified initial state', () => {
-    expect(wrapper.state()).toEqual({park: {}})
+    expect(wrapper.state()).toEqual({park: {reviews: []}})
   });
 
 
@@ -29,6 +36,13 @@ describe('ParkShowContainer', () => {
 
     expect(wrapper.find("ParkShow")).toBePresent()
   })
+
+  it('should render a ReviewTile Component', () => {
+    wrapper.setState({park: park})
+
+    expect(wrapper.find("ReviewTile")).toBePresent()
+  })
+
 
   it('should render the ParkShow Component with specific props when specfic park is selected', () => {
     wrapper.setState({park: park})
