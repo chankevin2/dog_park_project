@@ -1,6 +1,5 @@
 import React, {Component } from "react";
 import ParkShow from '../components/ParkShow'
-import ReviewIndexContainer from './ReviewIndexContainer'
 
 class ParkShowContainer extends Component {
   constructor(props) {
@@ -42,8 +41,6 @@ class ParkShowContainer extends Component {
           state={this.state.park.state}
           zip={this.state.park.zip}
          />
-       <br></br>
-       <ReviewIndexContainer />
       </div>
     )
   }
