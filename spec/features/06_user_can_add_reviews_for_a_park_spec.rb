@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'user can add reviews' do
+  park1 = FactoryBot.create(:park)
 
   scenario 'user adds new review successfully' do
     visit new_park_review_path
