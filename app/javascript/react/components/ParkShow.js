@@ -10,7 +10,6 @@ const ParkShow = props => {
       <p>{props.city},</p>
       <p>{props.state}</p>
       <p>{props.zip}</p>
-      </p>
       <br></br>
       <a href={`/parks/${props.id}/reviews/new`}>Add New Review</a>
     </div>
