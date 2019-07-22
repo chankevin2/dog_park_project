@@ -1,15 +1,14 @@
-<h1> Dog Parks </h1>
+<h1> Dog Parks  <%= link_to "Add a New Park", new_park_path %></h1>
 
 <ul>
   <% @parks.each do |park| %>
+  <a href="/parks/<%= park.id %>">
   <li>
     <div class="callout">
     <div class="callout-header"><%= park.name %></div>
     <div class="callout-container">
       <%= park.address %>
     </div>
-  </li><br>
+  </li></a><br>
   <% end %>
 </ul>
-
-<%= link_to "Add a New Park", new_park_path %>
