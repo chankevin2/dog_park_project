@@ -4,7 +4,7 @@ feature 'user can add reviews' do
   park1 = FactoryBot.create(:park)
 
   scenario 'user adds new review successfully' do
-    visit new_park_review_path
+    visit "/parks/1/reviews/new"
 
     expect(page).to have_content "Add Review Form"
     expect(page).to have_link "Back to Homepage"
@@ -19,7 +19,7 @@ feature 'user can add reviews' do
   end
 
   scenario "user does not fill out any fields" do
-   visit new_park_review_path
+   visit "/parks/1/reviews/new"
 
    click_button "Add Review"
    expect(page).to have_content "Rating can't be blank"
@@ -28,7 +28,7 @@ feature 'user can add reviews' do
   end
 
   scenario "user does not provide a number value of 0-5 for the rating" do
-   visit new_park_review_path
+   visit "/parks/1/reviews/new"
 
    fill_in 'Rating', with: "adfsasdf"
    fill_in 'Review', with: "It's grrrrreat!"
