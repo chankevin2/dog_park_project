@@ -1,6 +1,7 @@
 import React, {Component } from "react";
 import ParkShow from '../components/ParkShow'
 import ReviewIndexContainer from './ReviewIndexContainer'
+import ReviewTile from '../components/ReviewTile'
 
 class ParkShowContainer extends Component {
   constructor(props) {
@@ -43,7 +44,9 @@ class ParkShowContainer extends Component {
           zip={this.state.park.zip}
          />
        <br></br>
-       <ReviewIndexContainer />
+       <ReviewTile
+          reviews={this.state.park.reviews}
+       />
       </div>
     )
   }
