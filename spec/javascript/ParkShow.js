@@ -22,23 +22,23 @@ describe('ParkShow', () => {
   })
 
   it ('should render a p tag with the description',() => {
-    expect(wrapper.find('p').text()).toContain("This place is dangerous")
+    expect(wrapper.find('p#desc').text()).toContain("This place is dangerous")
   })
 
   it ('should render a p tag with the address',() => {
-    expect(wrapper.find('p1').text()).toContain("19 State Road")
+    expect(wrapper.find('p#address').text()).toContain("19 State Road")
   })
 
   it ('should render a p tag with the city',() => {
-    expect(wrapper.find('p2').text()).toContain("Mattapan")
+    expect(wrapper.find('p#address').text()).toContain("Mattapan")
   })
 
   it ('should render a p tag with the state',() => {
-    expect(wrapper.find('p3').text()).toContain("MA")
+    expect(wrapper.find('p#address').text()).toContain("MA")
   })
 
   it ('should render a p tag with the zip',() => {
-    expect(wrapper.find('p4').text()).toContain("06661")
+    expect(wrapper.find('p#address').text()).toContain("06661")
   })
 
 })
