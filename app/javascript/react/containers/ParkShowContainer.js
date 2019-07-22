@@ -1,11 +1,14 @@
 import React, {Component } from "react";
 import ParkShow from '../components/ParkShow'
+import ReviewTile from '../components/ReviewTile'
 
 class ParkShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      park: {}
+      park: {
+        reviews: []
+      }
     }
   }
 
@@ -23,13 +26,21 @@ class ParkShowContainer extends Component {
      })
      .then(response => response.json())
      .then(body => {
-
        this.setState({park: body});
      })
      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
+    let reviewTiles = this.state.park.reviews.map (review => {
+      return(
+        <ReviewTile
+        key={review.id}
+        rating={review.rating}
+        body={review.body}
+         />
+      )
+    })
     return(
       <div>
         <ParkShow
@@ -41,6 +52,8 @@ class ParkShowContainer extends Component {
           state={this.state.park.state}
           zip={this.state.park.zip}
          />
+       <br></br>
+       {reviewTiles}
       </div>
     )
   }
