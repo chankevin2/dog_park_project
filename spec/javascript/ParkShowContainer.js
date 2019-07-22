@@ -1,6 +1,5 @@
 import ParkShowContainer from '../../app/javascript/react/containers/ParkShowContainer'
 import ParkShow from '../../app/javascript/react/components/ParkShow'
-import fetchMock from 'fetch-mock'
 
 describe('ParkShowContainer', () => {
   let wrapper, park;
@@ -22,13 +21,6 @@ describe('ParkShowContainer', () => {
   it('should have the specified initial state', () => {
     expect(wrapper.state()).toEqual({park: {}})
   });
-
-  it('renders a park fetched from api call', (done) => {
-    setTimeout(() => {
-      expect(wrapper.find('h3').text()).toEqual(park.name)
-      done()
-    }, 0)
-  })
 
   it('should render a ParkShow Component', () => {
     wrapper.setState({park: park})
