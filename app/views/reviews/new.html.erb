@@ -1,5 +1,5 @@
-<h1> Add Review Form </h1>
-
+<h1 class="field"> Add Review Form </h1>
+<div class="field">
 <%= form_for([@park, @review]) do |f| %>
 
   <b><%= f.label :rating%></b>
@@ -14,3 +14,4 @@
 <% end %>
 
 <%= link_to "Back to Homepage", parks_path %>
+</div>

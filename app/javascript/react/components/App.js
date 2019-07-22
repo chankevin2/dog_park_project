@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 export const App = (props) => {
   return (
-
     <BrowserRouter>
       <Switch>
         <Route exact path="/parks/:id" component={ParkShowContainer}/>

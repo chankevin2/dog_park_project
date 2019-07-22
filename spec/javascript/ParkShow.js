@@ -1,6 +1,5 @@
 import ParkShow from '../../app/javascript/react/components/ParkShow'
 
-
 describe('ParkShow', () => {
   let wrapper;
 
@@ -22,7 +21,7 @@ describe('ParkShow', () => {
   })
 
   it ('should render a p tag with the description',() => {
-    expect(wrapper.find('p#desc').text()).toContain("This place is dangerous")
+    expect(wrapper.find('p#descr').text()).toContain("This place is dangerous")
   })
 
   it ('should render a p tag with the address',() => {

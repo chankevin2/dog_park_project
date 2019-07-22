@@ -15,7 +15,11 @@
  *= require foundation_and_overrides
 
  */
- /* Callout box - fixed position at the bottom of the page */
+ .field {
+   margin-left: 4rem;
+   margin-right: 4rem;
+ }
+
  .callout {
    position: static;
    bottom: 35px;
@@ -24,7 +28,6 @@
    max-width: 300px;
  }
 
- /* Callout header */
  .callout-header {
    padding: 25px 15px;
    background: #478DB3;
@@ -32,7 +35,6 @@
    color: #CCB852;
  }
 
- /* Callout container/body */
  .callout-container {
    padding: 15px;
    background-color: #80D2FF;

@@ -3,8 +3,9 @@ import React from 'react'
 const ReviewTile = (props) => {
   return(
     <div>
-      <p>Rating: {props.rating}</p>
-      <p>Description: {props.body}</p>
+      <li>
+        Rating: {props.rating} || Review: {props.body}
+      </li>
     </div>
   )
 }
