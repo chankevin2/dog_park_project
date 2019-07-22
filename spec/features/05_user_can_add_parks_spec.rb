@@ -1,8 +1,17 @@
 require 'rails_helper'
 
-feature 'user can add parks' do
+feature 'only admins can add parks' do
+  scenario 'non-admin user tries to add new park' do
+    user = FactoryBot.create(:user, role: "member")
+    
+    visit new_park_path
 
-  scenario 'user adds new park successfully' do
+    expect(page).to have_content "You do not have access to this page"
+  end
+
+  scenario 'admin adds new park successfully' do
+    user = FactoryBot.create(:user, role: "admin")
+
     visit new_park_path
 
     expect(page).to have_content "New Park Form"
@@ -22,7 +31,9 @@ feature 'user can add parks' do
     expect(page).to have_content "930 S 9th St"
   end
 
-  scenario "user does not provide proper information for a park" do
+  scenario "admin does not provide proper information for a park" do
+   user = FactoryBot.create(:user, role: "admin")
+
    visit new_park_path
 
    click_button "Add Dog Park"
