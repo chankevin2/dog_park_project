@@ -32,6 +32,7 @@
 #  end
 # end
 
+
 park1 = Park.create(name: "Mattapan Park", address: "19 State Road", city: "Mattapan", state: "MA", zip: 06661, description: "This place sucks")
 park2 = Park.create(name: "DexterPark", address: "19 City Road", city: "Boston", state: "MA", zip: 06661, description: "This place is great")
 park3 = Park.create(name: "Chinatown", address: "29 Town Road", city: "Boston", state: "MA", zip: 06661, description: "This place is really awesome")
