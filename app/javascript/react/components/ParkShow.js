@@ -5,11 +5,8 @@ const ParkShow = props => {
   return(
     <div>
       <h3>{props.name}</h3>
-      Description: <p>{props.description}</p>
-      Address: <p>{props.address}</p>
-      <p>{props.city}</p>
-      <p>{props.state}</p>
-      <p>{props.zip}</p>
+      <p>Description: {props.description}</p>
+      <p>Address: {props.address}, {props.city}, {props.state} {props.zip}</p>
     </div>
   )
 }
