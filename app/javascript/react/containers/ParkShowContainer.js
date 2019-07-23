@@ -7,9 +7,24 @@ class ParkShowContainer extends Component {
     super(props);
     this.state ={
       park: {
-        reviews: []
+        reviews: [],
+        selectedThumbsUpId: null,
+        selectedThumbsDownId: null
       }
     }
+    this.handleReviewThumbsUpClick = this.handleReviewThumbsUpClick.bind(this)
+    this.handleReviewThumbsDownClick = this.handleReviewThumbsDownClick.bind(this)
+  }
+
+  handleReviewThumbsUpClick( id ) {
+    this.setState({selectedThumbsUpId: id, selectedThumbsDownId: null})
+  }
+  handleReviewThumbsDownClick (id) {
+    this.setState({selectedThumbsDownId: id, selectedThumbsUpId: null})
+  }
+
+  updateVoteRating() {
+    fetch()
   }
 
   componentDidMount() {
@@ -32,12 +47,31 @@ class ParkShowContainer extends Component {
   }
 
   render() {
+
+
     let reviewTiles = this.state.park.reviews.map (review => {
+      let thumbs_up = ''
+      let thumbs_down = ''
+      if(review.id === this.state.selectedThumbsUpId) {
+        thumbs_up = "thumbs_up"
+        thumbs_down = ""
+      } else if(review.id === this.state.selectedThumbsDownId){
+        thumbs_down = "thumbs_down"
+        thumbs_up = ""
+      }
+
+      let thumbsUpClick = () => this.handleReviewThumbsUpClick(review.id)
+      let thumbsDownClick = () => this.handleReviewThumbsDownClick(review.id)
+
       return(
         <ReviewTile
-        key={review.id}
-        rating={review.rating}
-        body={review.body}
+          key={review.id}
+          rating={review.rating}
+          body={review.body}
+          handleThumbsUpClick={thumbsUpClick}
+          handleThumbsDownClick={thumbsDownClick}
+          thumbs_up={thumbs_up}
+          thumbs_down={thumbs_down}
          />
       )
     })
@@ -58,6 +92,4 @@ class ParkShowContainer extends Component {
     )
   }
 }
-
-
 export default ParkShowContainer
