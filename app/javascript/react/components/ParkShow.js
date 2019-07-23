@@ -9,6 +9,8 @@ const ParkShow = props => {
       <p1>Address: {props.address}, {props.city}, {props.state}  {props.zip} </p1>
       <br></br>
       <a href={`/parks/${props.id}/reviews/new`}>Add New Review</a>
+      <br></br>
+      <a href={`/parks/${props.id}/edit`}>Edit / Delete</a>
     </div>
   )
 }
