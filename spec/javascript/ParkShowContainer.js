@@ -27,9 +27,9 @@ describe('ParkShowContainer', () => {
   })
 
   it('should have the specified initial state', () => {
-    expect(wrapper.state()).toEqual({park: {reviews: []}})
+    expect(wrapper.state()).toEqual({park: {reviews: [], selectedThumbsUpId: null, selectedThumbsDownId: null}})
   });
-  
+
   it('should render a ParkShow Component', () => {
     wrapper.setState({park: park})
 
