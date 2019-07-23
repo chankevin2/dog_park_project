@@ -2,7 +2,11 @@ require 'rails_helper'
 
 feature 'only admins can add parks' do
   scenario 'non-admin user tries to add new park' do
-    user = FactoryBot.create(:user, role: "member")
+    user = User.create(
+      email: "adfadadsfasdfsf@gmail.com",
+      password: "123456",
+      role: "member"
+      )
 
     visit new_user_session_path
     fill_in 'Email', with: user.email
@@ -15,7 +19,11 @@ feature 'only admins can add parks' do
   end
 
   scenario 'admin adds new park successfully' do
-    user = FactoryBot.create(:user, role: "admin")
+    user = User.create(
+      email: "adfasdfsf@gmail.com",
+      password: "123456",
+      role: "admin"
+      )
 
     visit new_user_session_path
     fill_in 'Email', with: user.email
@@ -43,8 +51,11 @@ feature 'only admins can add parks' do
   end
 
   scenario "admin does not provide proper information for a park" do
-   user = FactoryBot.create(:user, role: "admin")
-
+    user = User.create(
+      email: "asf@gmail.com",
+      password: "123456",
+      role: "admin"
+      )
    visit new_user_session_path
    fill_in 'Email', with: user.email
    fill_in 'Password', with: user.password
