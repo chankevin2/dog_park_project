@@ -2,7 +2,7 @@ import React from 'react'
 
 const ReviewTile = (props) => {
   return(
-    <div class="callout">
+    <div className="callout">
       <li>
         Rating: {props.rating} || Review: {props.body}
       </li>
