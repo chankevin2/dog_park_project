@@ -9,10 +9,7 @@ feature 'admin can edit park' do
       role: "admin"
       )
 
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_as(user)
 
     visit "/parks/#{park3.id}/edit"
 
@@ -36,10 +33,7 @@ feature 'admin can edit park' do
      role: "admin"
      )
 
-   visit new_user_session_path
-   fill_in 'Email', with: user.email
-   fill_in 'Password', with: user.password
-   click_button 'Log in'
+   sign_in_as(user)
 
    visit "/parks/#{park3.id}/edit"
 
@@ -58,10 +52,7 @@ feature 'admin can edit park' do
      role: "admin"
      )
 
-   visit new_user_session_path
-   fill_in 'Email', with: user.email
-   fill_in 'Password', with: user.password
-   click_button 'Log in'
+   sign_in_as(user)
 
    visit "/parks/#{park3.id}/edit"
 

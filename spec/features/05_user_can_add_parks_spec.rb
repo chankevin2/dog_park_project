@@ -8,10 +8,7 @@ feature 'only admins can add parks' do
       role: "member"
       )
 
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_as(user)
 
     visit new_park_path
 
@@ -25,10 +22,7 @@ feature 'only admins can add parks' do
       role: "admin"
       )
 
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_as(user)
 
     visit new_park_path
 
@@ -56,10 +50,8 @@ feature 'only admins can add parks' do
       password: "123456",
       role: "admin"
       )
-   visit new_user_session_path
-   fill_in 'Email', with: user.email
-   fill_in 'Password', with: user.password
-   click_button 'Log in'
+
+   sign_in_as(user)
 
    visit new_park_path
 
