@@ -18,9 +18,9 @@
     <b><%= f.label :description%></b>
     <%= f.text_field :description%>
 
-    <%= f.submit "Edit Dog Park" %><br><br>
+    <%= f.submit "Edit Park" %><br><br>
 
-    <%= link_to "Delete", park_path(@park), method: :delete, data: {confirm: 'Are you sure?'} %>
+    <%= link_to "Delete", park_path(@park), method: :delete, data: {confirm: 'Are you sure?'} %><br><br>
 
-    <%= link_to "Back to Homepage", parks_path %>
+    <%= link_to "Back to Park", park_path %>
   <% end %>

@@ -33,15 +33,18 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
 
     if @park.update(park_params)
+      flash[:success] = "Dog Park edited successfully"
       redirect_to park_path(@park)
     else
-      render 'edit'
+      flash.now[:error] = @park.errors.full_messages.join("<br/>").html_safe
+      render :edit
     end
   end
 
   def destroy
     @park = Park.find(params[:id])
     @park.destroy
+    flash[:success] = "Dog Park deleted successfully"
     redirect_to parks_path
   end
 
@@ -55,11 +58,5 @@ class ParksController < ApplicationController
       flash[:notice] = "You do not have access to this page."
       redirect_to root_path
     end
-
-    def authorize_user
-      if !user_signed_in? || !current_user.admin?
-        flash[:notice] = "You do not have access to this page."
-        redirect_to root_path
-      end
-    end
+  end
 end
