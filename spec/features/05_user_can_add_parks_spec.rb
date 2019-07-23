@@ -1,8 +1,35 @@
 require 'rails_helper'
 
-feature 'user can add parks' do
+feature 'only admins can add parks' do
+  scenario 'non-admin user tries to add new park' do
+    user = User.create(
+      email: "adfadadsfasdfsf@gmail.com",
+      password: "123456",
+      role: "member"
+      )
 
-  scenario 'user adds new park successfully' do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    visit new_park_path
+
+    expect(page).to have_content "You do not have access to this page"
+  end
+
+  scenario 'admin adds new park successfully' do
+    user = User.create(
+      email: "adfasdfsf@gmail.com",
+      password: "123456",
+      role: "admin"
+      )
+
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
     visit new_park_path
 
     expect(page).to have_content "New Park Form"
@@ -15,6 +42,7 @@ feature 'user can add parks' do
     fill_in 'Zip', with: "19147"
     fill_in 'Description', with: "Run by the one and only Florida Man"
 
+    expect(page).to have_button("Add Dog Park", disabled: false)
     click_button "Add Dog Park"
 
     expect(page).to have_content "Dog Park saved successfully"
@@ -22,10 +50,22 @@ feature 'user can add parks' do
     expect(page).to have_content "930 S 9th St"
   end
 
-  scenario "user does not provide proper information for a park" do
+  scenario "admin does not provide proper information for a park" do
+    user = User.create(
+      email: "asf@gmail.com",
+      password: "123456",
+      role: "admin"
+      )
+   visit new_user_session_path
+   fill_in 'Email', with: user.email
+   fill_in 'Password', with: user.password
+   click_button 'Log in'
+
    visit new_park_path
 
+   expect(page).to have_button("Add Dog Park", disabled: false)
    click_button "Add Dog Park"
+
    expect(page).to have_content "Name can't be blank"
    expect(page).to have_content "Address can't be blank"
    expect(page).to have_content "City can't be blank"
