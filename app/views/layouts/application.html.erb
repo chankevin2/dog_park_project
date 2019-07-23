@@ -6,13 +6,12 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    <%= javascript_include_tag "vendor/modernizr" %>
 
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <nav class="top-bar">
+  <div class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">DogParkProject</a></h1>
@@ -29,7 +28,7 @@
         <%- end -%>
       </ul>
     </section>
-  </nav>
+  </div>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
