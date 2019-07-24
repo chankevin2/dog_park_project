@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :profile_photo, ProfilePhotoUploader
   has_many :reviews
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
