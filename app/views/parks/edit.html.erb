@@ -1,3 +1,27 @@
 <h1> Edit </h1>
+<%= form_for @park do |f| %>
 
-<%= render 'form' %>
+  <b><%= f.label :name%></b>
+  <%= f.text_field :name%>
+
+  <b><%= f.label :address, "Street Address"%></b>
+  <%= f.text_field :address%>
+
+  <b><%= f.label :city%></b>
+  <%= f.text_field :city%>
+
+  <b><%= f.label :state%></b>
+  <%= f.text_field :state%>
+
+  <b><%= f.label :zip%></b>
+  <%= f.text_field :zip%>
+
+  <b><%= f.label :description%></b>
+  <%= f.text_field :description%>
+
+  <%= f.submit "Edit Park" %><br><br>
+
+  <%= link_to "Delete", park_path(@park), method: :delete, data: {confirm: 'Are you sure?'} %><br><br>
+
+  <%= link_to "Back to Park", park_path %>
+<% end %>
