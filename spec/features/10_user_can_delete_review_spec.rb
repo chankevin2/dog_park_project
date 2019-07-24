@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'user can edit review' do
-  scenario 'user should see fields filled with current review information' do
+feature 'user can delete review' do
+  scenario 'user successfully deletes review' do
     park3 = FactoryBot.create(:park, city: "Boston", state: "MA", zip: "01003", description: "Yankees suck")
     user = User.create(
       email: "qweqweqwe@gmail.com",
