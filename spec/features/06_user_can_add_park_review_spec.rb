@@ -42,7 +42,7 @@ feature 'user can add reviews' do
    click_button "Add Review"
    expect(page).to have_content "Rating can't be blank"
    expect(page).to have_content "Rating must be a number of 1-5"
-   expect(page).to have_content "Body can't be blank"
+   expect(page).to have_content "Review can't be blank"
   end
 
   scenario "user does not provide a number value of 1-5 for the rating" do
