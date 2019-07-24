@@ -6,6 +6,7 @@ const ReviewTile = (props) => {
       <li>
         Rating: {props.rating} || Review: {props.body}
       </li>
+      <a href={`/parks/${props.park_id}/reviews/${props.id}/edit`}>Edit Review</a>
     </div>
   )
 }

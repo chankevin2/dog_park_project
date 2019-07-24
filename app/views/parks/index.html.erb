@@ -1,15 +1,14 @@
+<h1> Dog Parks </h1>
+<h3 class="hollow button"><%= link_to "Add a New Park", new_park_path %> </h3>
 
-
-    <h1> Dog Parks </h1>
-    <h3 class="hollow button"><%= link_to "Add a New Park", new_park_path %> </h3>
-
-    <ul class="wrapper ">
-      <% @parks.each do |park|%>
-      <a href="/parks/<%= park.id %>">
+<ul class="wrapper ">
+  <% @parks.each do |park|%>
+    <a href="/parks/<%= park.id %>">
       <li>
         <div class="callout">
         <div class="callout-header"><%= park.name %></div>
         <div class="callout-container"><%= park.address %></div>
-      </li></a>
-      <% end %>
-    </ul>
+      </li>
+    </a>
+  <% end %>
+</ul>
