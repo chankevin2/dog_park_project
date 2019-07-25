@@ -10,7 +10,7 @@ const ParkShow = props => {
      <p id="descr">{props.description}</p>
        <hr className="indexbar"/>
       <p id="address">Address: {props.address}</p>
-      <p>{props.city}, {props.state}  {props.zip} </p>
+      <p id="address">{props.city}, {props.state}  {props.zip} </p>
       <div>
       <a href={`/parks/${props.id}/edit`}>Edit</a> &nbsp; / &nbsp;
       <a href={`/parks/${props.id}/reviews/new`}>Add New Review</a>
