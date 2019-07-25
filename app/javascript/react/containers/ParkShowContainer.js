@@ -1,30 +1,14 @@
 import React, {Component } from "react";
 import ParkShow from '../components/ParkShow'
-import ReviewTile from '../components/ReviewTile'
+import ReviewContainer from './ReviewContainer'
 
 class ParkShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      park: {
-        reviews: [],
-        selectedThumbsUpId: null,
-        selectedThumbsDownId: null
-      }
+      park: {},
+      reviews: []
     }
-    this.handleReviewThumbsUpClick = this.handleReviewThumbsUpClick.bind(this)
-    this.handleReviewThumbsDownClick = this.handleReviewThumbsDownClick.bind(this)
-  }
-
-  handleReviewThumbsUpClick( id ) {
-    this.setState({selectedThumbsUpId: id, selectedThumbsDownId: null})
-  }
-  handleReviewThumbsDownClick (id) {
-    this.setState({selectedThumbsDownId: id, selectedThumbsUpId: null})
-  }
-
-  updateVoteRating() {
-    fetch()
   }
 
   componentDidMount() {
@@ -41,40 +25,12 @@ class ParkShowContainer extends Component {
      })
      .then(response => response.json())
      .then(body => {
-       this.setState({park: body});
+       this.setState({park: body, reviews:body.reviews});
      })
      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
-
-
-    let reviewTiles = this.state.park.reviews.map (review => {
-      let thumbs_up = ''
-      let thumbs_down = ''
-      if(review.id === this.state.selectedThumbsUpId) {
-        thumbs_up = "thumbs_up"
-        thumbs_down = ""
-      } else if(review.id === this.state.selectedThumbsDownId){
-        thumbs_down = "thumbs_down"
-        thumbs_up = ""
-      }
-
-      let thumbsUpClick = () => this.handleReviewThumbsUpClick(review.id)
-      let thumbsDownClick = () => this.handleReviewThumbsDownClick(review.id)
-
-      return(
-        <ReviewTile
-          key={review.id}
-          rating={review.rating}
-          body={review.body}
-          handleThumbsUpClick={thumbsUpClick}
-          handleThumbsDownClick={thumbsDownClick}
-          thumbs_up={thumbs_up}
-          thumbs_down={thumbs_down}
-         />
-      )
-    })
     return(
       <div>
         <ParkShow
@@ -87,7 +43,9 @@ class ParkShowContainer extends Component {
           zip={this.state.park.zip}
          />
        <br></br>
-       {reviewTiles}
+       <ReviewContainer
+        reviews = {this.state.reviews}
+        />
       </div>
     )
   }
