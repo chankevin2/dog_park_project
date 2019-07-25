@@ -3,7 +3,6 @@ class ParksController < ApplicationController
 
   def index
     @parks = Park.all.order("created_at DESC")
-    # binding.pry
   end
 
   def new
