@@ -28,7 +28,7 @@ class ReviewContainer extends Component {
             thumbsUpClickCount: thumbsUpClickCountThis,
             thumbsDownClickCount: 0,
             thumbs_up: thumbs_up_this,
-            thumbs_down: clickCount.thumbs_down
+            thumbs_down: 0
           }
 
         })
@@ -44,7 +44,7 @@ class ReviewContainer extends Component {
             id: clickCount.id,
             thumbsUpClickCount: 0,
             thumbsDownClickCount: thumbsDownClickCountThis,
-            thumbs_up: clickCount.thumbs_up,
+            thumbs_up: 0,
             thumbs_down: thumbs_down_this
           }
         })
