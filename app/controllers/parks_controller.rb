@@ -3,6 +3,7 @@ class ParksController < ApplicationController
 
   def index
     @parks = Park.all.order("created_at DESC")
+    # binding.pry
   end
 
   def new
@@ -50,7 +51,7 @@ class ParksController < ApplicationController
 
   private
   def park_params
-      params.require(:park).permit(:name, :address, :city, :state, :zip, :description)
+      params.require(:park).permit(:name, :address, :city, :state, :zip, :description, :park_photo)
   end
 
   def authorize_user
