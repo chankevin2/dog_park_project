@@ -1,5 +1,6 @@
+<center>
+<div class="user-box">
 <h1 class="field">New Park Form</h1>
-
 <div class="field">
   <%= form_for(@park) do |f| %>
 
@@ -22,7 +23,9 @@
     <%= f.text_field :description%>
 
     <%= f.submit "Add Dog Park" %><br><br>
-    
+
     <%= link_to "Back to Homepage", parks_path %>
   <% end %>
+</div>
+</center>
 </div>
