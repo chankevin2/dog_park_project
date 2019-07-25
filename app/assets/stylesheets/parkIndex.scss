@@ -1,0 +1,42 @@
+
+
+.addParkButton{
+  padding-left: 2rem;
+
+}
+
+.callout-header {
+  padding: 25px 15px;
+  background: #478DB3;
+  font-size: 30px;
+  color: #CCB852;
+  font-family: "Times New Roman", Times, serif;
+}
+.callout-header:hover{
+  background: #4f9bc5;
+
+}
+.callout.parktile{
+  background: #e6e6e6;
+}
+.dogParks{
+  padding-left: 2rem;
+}
+
+.hollow.button{
+  margin-left: 3rem;
+}
+
+.parkIndex {
+  padding-left: 2rem;
+}
+.row{
+  padding-left: 2rem
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+
+}
