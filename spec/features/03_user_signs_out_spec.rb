@@ -7,7 +7,10 @@ feature 'user signs out', %Q{
 } do
 
   scenario 'authenticated user signs out' do
-    user = FactoryBot.create(:user)
+    user = User.create(
+      email: "adfasdfasdff@gmail.com",
+      password: "123456"
+      )
 
     visit new_user_session_path
 

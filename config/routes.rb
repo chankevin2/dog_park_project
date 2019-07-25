@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'parks#index'
   devise_for :users
-  resources :parks, only: [:index, :new, :create, :show]do
-    resources :reviews, only: [:new, :create]
+    resources :parks, only: [:index, :new, :create, :show, :edit, :update, :destroy]do
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
 
 

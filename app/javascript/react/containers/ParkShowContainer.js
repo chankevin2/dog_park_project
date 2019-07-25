@@ -35,7 +35,9 @@ class ParkShowContainer extends Component {
     let reviewTiles = this.state.park.reviews.map (review => {
       return(
         <ReviewTile
+        park_id={this.state.park.id}
         key={review.id}
+        id={review.id}
         rating={review.rating}
         body={review.body}
          />

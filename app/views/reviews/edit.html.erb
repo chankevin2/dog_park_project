@@ -1,4 +1,4 @@
-<h1 class="field"> Add Review Form </h1>
+<h1>Edit Review</h1>
 <div class="field">
 <%= form_for([@park, @review]) do |f| %>
 
@@ -8,10 +8,9 @@
   <b><%= f.label :body, "Review"%></b>
   <%= f.text_field :body%>
 
-
-  <%= f.submit "Add Review" %>
+  <%= f.submit "Edit Review" %>
 
 <% end %>
-
+<%= button_to "Delete", park_review_path, method: :delete, data: {confirm: 'Are you sure?'} %><br><br>
 <%= link_to "Back to #{@park.name}", park_path(@park) %>
 </div>
