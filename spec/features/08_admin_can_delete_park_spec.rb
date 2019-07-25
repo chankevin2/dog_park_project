@@ -12,7 +12,7 @@ feature 'admin can delete park' do
     sign_in_as(user)
 
     visit "/parks/#{park3.id}/edit"
-    click_link "Delete"
+    click_button "Delete"
 
     expect(page).to have_content "Dog Park deleted successfully"
   end

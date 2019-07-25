@@ -23,7 +23,7 @@ feature 'user can edit review' do
     expect(find_field('Review').value).to eq review1.body
 
     expect(page).to have_button "Edit Review"
-    expect(page).to have_link "Back to #{park3.name}"
+    expect(page).to have_button "Back to #{park3.name}"
   end
 
   scenario "user changes review rating and body successfully" do

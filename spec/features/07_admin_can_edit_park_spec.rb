@@ -21,8 +21,8 @@ feature 'admin can edit park' do
     expect(find_field('Description').value).to eq park3.description
 
     expect(page).to have_button "Edit Park"
-    expect(page).to have_link "Delete"
-    expect(page).to have_link "Back to Park"
+    expect(page).to have_button "Delete"
+    expect(page).to have_button "Back to Park"
   end
 
   scenario "admin changes name and address of park successfully" do
