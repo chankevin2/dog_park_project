@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>DogParkProject</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,26 +11,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="contain-to-grid full-top-bar">
   <div class="top-bar">
+    <div class="top-bar-left">
     <div class="logo">
         <%= link_to image_tag("/logo/doglogo.png"), "/" %>
     </div>
-    <div>
-      <input type="search" placeholder="Search"> <button type="button" class="button">Search</button>
     </div>
-    <section class="top-bar-section">
+    <section class="top-bar-section logo">
       <div class="right">
+
         <%- if current_user -%>
-          <div><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
+          <div class="top-bar-right"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
         <%- else -%>
-          <button><%= link_to 'Sign Up', new_user_registration_path %></button> / <button <%= link_to 'Sign In', new_user_session_path %></button>
+      <%= link_to 'Sign Up', new_user_registration_path %> / <%= link_to 'Sign In', new_user_session_path %>
 
         <%- end -%>
       </div>
     </section>
-  </div>
-
+    </div>
+</div>
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
