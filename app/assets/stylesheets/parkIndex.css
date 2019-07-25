@@ -13,8 +13,12 @@
 .wrapper{
   display: grid;
   grid-template-columns: auto auto auto;
+   grid-gap: 10px;
 
 }
 .hollow.button{
   margin-left: 2rem;
+}
+.callout.parktile{
+
 }
