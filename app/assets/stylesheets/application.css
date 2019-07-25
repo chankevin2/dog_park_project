@@ -29,16 +29,10 @@
    max-width: 300px;
  }
 
- .callout-header {
-   padding: 25px 15px;
-   background: #478DB3;
-   font-size: 30px;
-   color: #CCB852;
- }
 
  .callout-container {
    padding: 15px;
-   background-color: #80D2FF;
+   background-color: black;
    color: white;
  }
 
