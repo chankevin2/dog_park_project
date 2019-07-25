@@ -2,7 +2,10 @@
 
 .addParkButton{
   padding-left: 2rem;
-
+}
+.address{
+  padding-left: 1rem;
+  padding-top: .5rem;
 }
 
 .callout-header {
@@ -11,6 +14,7 @@
   font-size: 30px;
   color: #CCB852;
   font-family: "Times New Roman", Times, serif;
+  text-align: center;
 }
 .callout-header:hover{
   background: #4f9bc5;
@@ -23,8 +27,24 @@
   padding-left: 2rem;
 }
 
-.hollow.button{
-  margin-left: 3rem;
+.body{
+margin-bottom: 50px;
+}
+.hollow.button.right{
+  margin-right: 6rem;
+  float:right;
+}
+.indexbar{
+  max-width: 75rem;
+  vertical-align: middle;
+}
+.top-bar-right{
+  float: right;
+  padding-right: 1rem;
+}
+.right{
+  float: right;
+  padding-right: 1rem;
 }
 
 .parkIndex {
@@ -38,5 +58,10 @@
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 10px;
+  max-width: 75rem;
+  margin: 0 auto;
 
+}
+.wholePage{
+  max-width: 75rem;
 }
