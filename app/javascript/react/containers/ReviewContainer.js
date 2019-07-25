@@ -8,12 +8,9 @@ class ReviewContainer extends Component {
       clickCounts: null
     }
     this.handleClick = this.handleClick.bind(this)
-    // this.updateVoteRating = this.updateVoteRating.bind(this)
   }
 
-
     handleClick(event, reviewId) {
-      debugger
       let newClickCounts = this.state.clickCounts
       if (event.target.className.includes('fa-thumbs-up')){
         newClickCounts = this.state.clickCounts.map (clickCount => {
@@ -30,7 +27,6 @@ class ReviewContainer extends Component {
             thumbs_up: thumbs_up_this,
             thumbs_down: 0
           }
-
         })
       } else if (event.target.className.includes('fa-thumbs-down')){
         newClickCounts = this.state.clickCounts.map (clickCount => {
@@ -51,34 +47,6 @@ class ReviewContainer extends Component {
       }
       this.setState({clickCounts: newClickCounts})
     }
-
-
-  updateVoteRating(newClickCount) {
-    let id = this.props.match.params.id
-    fetch(`/api/v1/parks/${id}`, {
-      crendetials: 'same-origin',
-      method: 'POST',
-      body: JSON.stringify(this.state.clickCounts),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ clickCounts: body })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
 
   render() {
     if ((this.state.clickCounts == null) && (this.props.reviews.length > 0)) {
