@@ -1,19 +1,20 @@
+<div class="parkShow">
+  <h3 class="hollow button right"><%= link_to "Add a New Park", new_park_path %> </h3>
 
-<h3 class="hollow button right"><%= link_to "Add a New Park", new_park_path %> </h3>
+  <hr class="indexbar"/>
+  <ul class="wrapper">
 
-<hr class="indexbar"/>
-<ul class="wrapper">
-
-  <% @parks.each do |park|%>
-  <a href="/parks/<%= park.id %>">
-  <li>
-    <div class="callout parktile">
-    <div class="callout-header"><%= park.name %></div>
-  <div class="address">
-  <%= park.address %>,
-  <%= park.city %>,
-  <%= park.state %>
-  </div>
-  </li></a>
-  <% end %>
-</ul>
+    <% @parks.each do |park|%>
+    <a href="/parks/<%= park.id %>">
+    <li>
+      <div class="callout parktile">
+      <div class="callout-header"><%= park.name %></div>
+    <div class="address">
+    <%= park.address %>,
+    <%= park.city %>,
+    <%= park.state %>
+    </div>
+    </li></a>
+    <% end %>
+  </ul>
+</div>
