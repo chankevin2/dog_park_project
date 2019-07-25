@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2019_07_23_141632) do
     t.bigint "user_id", null: false
     t.bigint "review_id", null: false
     t.string "vote_type", null: false
+    t.integer "upvote", default: 0
+    t.integer "downvote", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_votes_on_review_id"

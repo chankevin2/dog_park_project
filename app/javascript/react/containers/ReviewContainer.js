@@ -13,34 +13,36 @@ class ReviewContainer extends Component {
 
 
     handleClick(event, reviewId) {
+      debugger
       let newClickCounts = this.state.clickCounts
       if (event.target.className.includes('fa-thumbs-up')){
         newClickCounts = this.state.clickCounts.map (clickCount => {
           let thumbsUpClickCountThis = clickCount.thumbsUpClickCount
           let thumbs_up_this = clickCount.thumbs_up
-          if (reviewId == clickCount.id) {
+          if (reviewId == clickCount.id && clickCount.thumbsUpClickCount === 0) {
             thumbsUpClickCountThis = thumbsUpClickCountThis + 1
             thumbs_up_this = "thumbs_up"
           }
           return {
             id: clickCount.id,
             thumbsUpClickCount: thumbsUpClickCountThis,
-            thumbsDownClickCount: clickCount.thumbsDownClickCount,
+            thumbsDownClickCount: 0,
             thumbs_up: thumbs_up_this,
             thumbs_down: clickCount.thumbs_down
           }
+
         })
       } else if (event.target.className.includes('fa-thumbs-down')){
         newClickCounts = this.state.clickCounts.map (clickCount => {
           let thumbsDownClickCountThis = clickCount.thumbsDownClickCount
           let thumbs_down_this = clickCount.thumbs_down
-          if (reviewId == clickCount.id) {
+          if (reviewId == clickCount.id && clickCount.thumbsDownClickCount === 0) {
             thumbsDownClickCountThis = thumbsDownClickCountThis + 1
             thumbs_down_this = "thumbs_down"
           }
           return {
             id: clickCount.id,
-            thumbsUpClickCount: clickCount.thumbsUpClickCount,
+            thumbsUpClickCount: 0,
             thumbsDownClickCount: thumbsDownClickCountThis,
             thumbs_up: clickCount.thumbs_up,
             thumbs_down: thumbs_down_this
@@ -51,32 +53,32 @@ class ReviewContainer extends Component {
     }
 
 
-  // updateVoteRating(newClickCount) {
-  //   let id = this.props.match.params.id
-  //   fetch(`/api/v1/parks/${id}/reviews/id`, {
-  //     crendetials: 'same-origin',
-  //     method: 'POST',
-  //     body: JSON.stringify(newClickCount),
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     }
-  //   })
-  //   .then(response => {
-  //     if (response.ok) {
-  //       return response;
-  //     } else {
-  //       let errorMessage = `${response.status} (${response.statusText})`,
-  //       error = new Error(errorMessage);
-  //       throw(error);
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then(body => {
-  //     this.setState({ clickCount: body })
-  //   })
-  //   .catch(error => console.error(`Error in fetch: ${error.message}`));
-  // }
+  updateVoteRating(newClickCount) {
+    let id = this.props.match.params.id
+    fetch(`/api/v1/parks/${id}`, {
+      crendetials: 'same-origin',
+      method: 'POST',
+      body: JSON.stringify(this.state.clickCounts),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ clickCounts: body })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
   render() {
     if ((this.state.clickCounts == null) && (this.props.reviews.length > 0)) {
