@@ -19,6 +19,9 @@
     </div>
 
     <section class="top-bar-section logo">
+      <div class="input-group searchbar">
+        <input class="input-field search-field" type="search" placeholder="Search for anything..." />
+      </div>
       <div class="right">
         <%- if current_user -%>
           <div class="top-bar-right"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
