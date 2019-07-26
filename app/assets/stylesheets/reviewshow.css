@@ -32,9 +32,15 @@
   margin: 0px;
 
 }
+.photo{
+  box-sizing:border-box;
+  width: auto;
+  height: auto;
+}
 .wrapper-review{
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
+  justify-content: stretch; 
   grid-gap: 10px;
   max-width: 75rem;
   margin: 0 auto;
@@ -48,4 +54,11 @@
 }
 .review{
   font-weight: bold;
+}
+.showPage{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  max-width: 75rem;
+  margin: 0 auto;
 }
