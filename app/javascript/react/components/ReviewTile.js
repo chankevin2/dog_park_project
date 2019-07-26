@@ -2,12 +2,13 @@ import React from 'react'
 
 const ReviewTile = (props) => {
   return(
-    <div className="callout">
-      <li>
-        Rating: {props.rating} || Review: {props.body}
-      </li>
+
+    <div className="callout box">
+        <div className="vote">Rating: {props.rating}</div>
+        <div className="review">Review:</div> <div>{props.body}</div>
       <a href={`/parks/${props.park_id}/reviews/${props.id}/edit`}>Edit Review</a>
     </div>
+
   )
 }
 
