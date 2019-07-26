@@ -27,7 +27,6 @@
 }
 .callout.parktile{
   background: #e6e6e6;
-  
 }
 .dogParks{
   padding-left: 2rem;
@@ -54,34 +53,26 @@ margin-bottom: 50px;
   float: right;
   padding-right: 1rem;
 }
-.input-group.searchbar{
-  width: 20%;
-  float: inherit;
-}
-
 .parkShow{
   vertical-align: middle;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
-
 }
 .parkIndex {
   padding-left: 2rem;
 }
-.photo{
-  padding-top: 1rem;
-
-}
 .row{
   padding-left: 2rem
 }
+.photo{
 
+}
 .wrapper{
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 0px;
-  max-width: 75rem;
+  max-width: 100rem;
   margin: 0 auto;
 
 }

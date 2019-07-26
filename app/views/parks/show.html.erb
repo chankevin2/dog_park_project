@@ -1,10 +1,7 @@
-<div class="showPage">
-  <div class="photo">
-    <% if @park.park_photo? %>
-    <%= image_tag @park.park_photo.url %>
-    <% end %>
-      </div>
-  <div id="app">
-  </div>
-
+<div class="wrapper">
+  <% if @park.park_photo? %>
+  <%= image_tag @park.park_photo.url %>
+  <% end %>
+    <div id="app">
+    </div>
 </div>
