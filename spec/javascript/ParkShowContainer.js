@@ -27,7 +27,7 @@ describe('ParkShowContainer', () => {
   })
 
   it('should have the specified initial state', () => {
-    expect(wrapper.state()).toEqual({park: {reviews: [], selectedThumbsUpId: null, selectedThumbsDownId: null}})
+    expect(wrapper.state()).toEqual({ park: Object({  }), reviews: [  ] })
   });
 
   it('should render a ParkShow Component', () => {
@@ -36,12 +36,11 @@ describe('ParkShowContainer', () => {
     expect(wrapper.find("ParkShow")).toBePresent()
   })
 
-  it('should render a ReviewTile Component', () => {
+  it('should render a ReviewContainer', () => {
     wrapper.setState({park: park})
 
-    expect(wrapper.find("ReviewTile")).toBePresent()
+    expect(wrapper.find("ReviewContainer")).toBePresent()
   })
-
 
   it('should render the ParkShow Component with specific props when specfic park is selected', () => {
     wrapper.setState({park: park})
