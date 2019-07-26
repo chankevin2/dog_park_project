@@ -5,3 +5,7 @@
 .top-bar-right {
 align-items: right;
 }
+.searchbar {
+  padding-top: 3rem;
+  align: right;
+}
