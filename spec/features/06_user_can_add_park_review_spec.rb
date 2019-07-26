@@ -14,7 +14,7 @@ feature 'user can add reviews' do
     visit "/parks/#{park3.id}/reviews/new"
 
     expect(page).to have_content "Add Review Form"
-    expect(page).to have_link "Back to #{park3.name}"
+    expect(page).to have_button "Back to #{park3.name}"
 
     fill_in 'Rating', with: "5"
     fill_in 'Review', with: "It's grrrrreat!"
