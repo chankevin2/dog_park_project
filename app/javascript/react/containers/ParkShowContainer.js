@@ -32,7 +32,9 @@ class ParkShowContainer extends Component {
   }
 
   render() {
+
     let reviewTiles = this.state.park.reviews.map (review => {
+      debugger
       return(
         <ReviewTile
         park_id={this.state.park.id}
@@ -40,6 +42,7 @@ class ParkShowContainer extends Component {
         id={review.id}
         rating={review.rating}
         body={review.body}
+        user={review.user_email}
          />
       )
     })
