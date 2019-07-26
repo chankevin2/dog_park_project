@@ -1,7 +1,11 @@
-<% if @park.park_photo? %>
-<%= image_tag @park.park_photo.url %>
-<% end %>
+<div class="wrapper">
 
 <div id="app">
 
+</div>
+<div class="pad">
+<% if @park.park_photo? %>
+<%= image_tag @park.park_photo.url %>
+<% end %>
+</div>
 </div>
