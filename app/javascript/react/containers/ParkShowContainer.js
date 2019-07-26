@@ -54,8 +54,10 @@ class ParkShowContainer extends Component {
           state={this.state.park.state}
           zip={this.state.park.zip}
          />
-       <br></br>
+  <hr className="indexbar"/>
+      <div className="wrapper-review">
        {reviewTiles}
+       </div>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 .logo {
-  width: 30%;
+  width: 70%;
   height: auto;
 }
-.top-bar-center {
-  
+.top-bar-right {
+align-items: right;
 }

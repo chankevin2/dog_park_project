@@ -1,3 +1,5 @@
+<center>
+<div class="user-box">
 <h1>Edit Review</h1>
 <div class="field">
 <%= form_for([@park, @review]) do |f| %>
@@ -12,5 +14,7 @@
 
 <% end %>
 <%= button_to "Delete", park_review_path, method: :delete, data: {confirm: 'Are you sure?'} %><br><br>
-<%= link_to "Back to #{@park.name}", park_path(@park) %>
+<%= button_to "Back to #{@park.name}", park_path(@park), :method => :get %>
+</div>
+</center>
 </div>

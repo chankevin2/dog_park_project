@@ -1,0 +1,79 @@
+.top-bar{
+    background: #c3dedc;
+}
+
+.addParkButton{
+  padding-left: 2rem;
+}
+.address{
+  padding-left: 1rem;
+  padding-top: .5rem;
+}
+.body{
+  background:#c3dedc;
+}
+
+.callout-header {
+  padding: 25px 15px;
+  background: #478DB3;
+  font-size: 30px;
+  color: #CCB852;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+.callout-header:hover{
+  background: #4f9bc5;
+
+}
+.callout.parktile{
+  background: #e6e6e6;
+}
+.dogParks{
+  padding-left: 2rem;
+}
+
+.body{
+margin-bottom: 50px;
+}
+.hollow.button.right{
+  margin-right: 4rem;
+  float:right;
+}
+.indexbar{
+  max-width: 75rem;
+  vertical-align: middle;
+}
+
+.top-bar-right{
+  float: right;
+  padding-right: 1rem;
+
+}
+.right{
+  float: right;
+  padding-right: 1rem;
+}
+.parkShow{
+  vertical-align: middle;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.parkIndex {
+  padding-left: 2rem;
+}
+.row{
+  padding-left: 2rem
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0px;
+  max-width: 75rem;
+  margin: 0 auto;
+
+}
+.wholePage{
+  max-width: 75rem;
+}
