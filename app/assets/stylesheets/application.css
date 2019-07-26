@@ -16,6 +16,15 @@
 
 
  */
+ .user-box {
+  background-color: #F7DEEB;
+  border-radius: 0.8em;
+  color: #000000;
+  padding: 1em;
+  margin: 1em;
+  max-width: 667px;
+}
+
  .field {
    margin-left: 4rem;
    margin-right: 4rem;
