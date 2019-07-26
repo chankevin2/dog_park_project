@@ -75,6 +75,8 @@ class ReviewContainer extends Component {
 
         return(
         <ReviewTile
+          park_id={review.park_id}
+          id={review.id}
           key={review.id}
           rating={review.rating}
           body={review.body}

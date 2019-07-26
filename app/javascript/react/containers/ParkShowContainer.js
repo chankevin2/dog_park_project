@@ -44,6 +44,7 @@ class ParkShowContainer extends Component {
          />
        <br></br>
        <ReviewContainer
+        park_id={this.state.park.id}
         reviews = {this.state.reviews}
         />
       </div>
