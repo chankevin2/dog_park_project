@@ -21,11 +21,11 @@
   <b><%= f.label :description%></b>
   <%= f.text_field :description%>
 
-  <%= f.submit "Edit Park" %><br><br>
+  <%= f.submit "Edit Park", :method => :post %><br><br>
 
-  <%= button_to "Delete", park_path(@park), method: :delete, data: {confirm: 'Are you sure?'} %><br><br>
+  <%= link_to "Delete", park_path(@park), method: :delete, data: {confirm: 'Are you sure?'} %><br><br>
 
-  <%= button_to "Back to Park", park_path, :method => :get  %>
+  <%= link_to "Back to Park", park_path %>
 <% end %>
 </center>
 </div>
