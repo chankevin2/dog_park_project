@@ -22,6 +22,7 @@
     <b><%= f.label :description%></b>
     <%= f.text_field :description%>
 
+    <%= f.file_field :park_photo %>
     <%= f.submit "Add Dog Park" %><br><br>
 
     <%= link_to "Back to Homepage", parks_path %>

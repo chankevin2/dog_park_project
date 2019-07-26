@@ -13,23 +13,21 @@
 <div class="contain-to-grid full-top-bar">
   <div class="top-bar">
     <div class="top-bar-left">
-    <div class="logo">
+      <div class="logo">
         <%= link_to image_tag("/logo/doglogo.png"), "/" %>
+      </div>
     </div>
-    
-    </div>
+
     <section class="top-bar-section logo">
       <div class="right">
-
         <%- if current_user -%>
           <div class="top-bar-right"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
         <%- else -%>
-      <%= link_to 'Sign Up', new_user_registration_path %> / <%= link_to 'Sign In', new_user_session_path %>
-
+        <%= link_to 'Sign Up', new_user_registration_path %> / <%= link_to 'Sign In', new_user_session_path %>
         <%- end -%>
       </div>
     </section>
-    </div>
+  </div>
 </div>
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
